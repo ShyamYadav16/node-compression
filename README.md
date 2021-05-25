@@ -4,13 +4,14 @@
 
 This is a framework for building a simple client and server in Node.js.
 
-##Assumptions
+##Assumptions:
+
     1. Multiple sensors are simulating system data and creating logs in a remote server.
     2. From the remote server, these logs needs to be read and compared to see if the data is the same.
     3. Due to the limited bandwidth of the connection between client and server, the messages that is being transmitted must be compressed.
     4. The latency for any given message should be less than 2 seconds.
     
-##Trade-offs
+##Trade-offs:
 
     1. To reduce the number of bits being transmitted, I have decided to do data compression on the client side before the messages are being transmitted.
     2. The messages are being sent in json format so I’ll use brotli compression algorithm which reduces the size of the data and time of the transmission.
