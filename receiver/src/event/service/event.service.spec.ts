@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { EventService } from './event.service';
+import { EventService } from '../service/event.service';
+import { getCompressMessage, getMessage } from "../helpers/event.helper";
 
 describe('EventService', () => {
   let service: EventService;
@@ -14,5 +15,10 @@ describe('EventService', () => {
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+  });
+
+  it('should brotli decompress message', () => {
+    const message = service.decompressMessage(getCompressMessage());
+    expect(message).toEqual(JSON.stringify(getMessage()));
   });
 });
