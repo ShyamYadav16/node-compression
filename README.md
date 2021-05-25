@@ -1,7 +1,5 @@
 ## Node compression
 
-##### Requirement:
-
 This is a framework for building a simple client and server in Node.js.
 
 ## Assumptions:
